@@ -1,6 +1,6 @@
+pub(crate) use crate::point::Point;
 use derive_builder::Builder;
 use serde::Deserialize;
-pub(crate) use crate::point::Point;
 
 #[derive(Debug, Deserialize)]
 #[allow(dead_code)]
@@ -8,6 +8,7 @@ pub struct TableResponse {
     pub code: String,
     pub destinations: Vec<TableLocationEntry>,
     pub durations: Vec<Vec<Option<f64>>>,
+    pub distances: Vec<Vec<Option<f64>>>,
     sources: Vec<TableLocationEntry>,
 }
 
@@ -21,7 +22,7 @@ pub struct TableLocationEntry {
 }
 
 #[derive(Debug, Builder, Clone)]
-pub struct TableRequest{
+pub struct TableRequest {
     pub sources: Vec<Point>,
-    pub destinations: Vec<Point>
+    pub destinations: Vec<Point>,
 }

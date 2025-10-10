@@ -65,6 +65,8 @@ extern "C" {
         osrm::OSRM* osrm_ptr = static_cast<osrm::OSRM*>(osrm_instance);
         osrm::TableParameters params;
 
+        params.annotations = osrm::TableParameters::AnnotationsType::All;
+
         for (size_t i = 0; i < num_coordinates; ++i) {
             params.coordinates.push_back({
                 osrm::util::FloatLongitude{coordinates[i * 2]},
