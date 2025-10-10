@@ -120,6 +120,10 @@ extern "C" {
         osrm::OSRM* osrm_ptr = static_cast<osrm::OSRM*>(osrm_instance);
         osrm::RouteParameters params;
 
+        params.steps = true;
+        params.overview = osrm::RouteParameters::OverviewType::Full; 
+        params.geometries = osrm::RouteParameters::GeometriesType::GeoJSON;
+
         for (size_t i = 0; i < num_coordinates; ++i) {
             params.coordinates.push_back({
                 osrm::util::FloatLongitude{coordinates[i * 2]},
