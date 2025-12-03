@@ -85,12 +85,14 @@ pub enum DrivingSide {
     Left,
     Right,
     Straight,
-    // only present in some version(s) / strings:
     #[serde(rename = "slight left")]
     SlightLeft,
     #[serde(rename = "slight right")]
     SlightRight,
-    // only in second → include to be a superset:
+    #[serde(rename = "sharp left")]
+    SharpLeft,
+    #[serde(rename = "sharp right")]
+    SharpRight,
     None,
     Uturn,
 }
